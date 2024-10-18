@@ -1,0 +1,14 @@
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\bin\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.exe
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\bin\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.deps.json
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\bin\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.runtimeconfig.json
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\bin\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.dll
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\bin\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.pdb
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.dll
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\refint\TP3-programacion-gonzalez-maria-trinidad.dll
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.pdb
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.genruntimeconfig.cache
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\ref\TP3-programacion-gonzalez-maria-trinidad.dll

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP3-programacion-gonzalez-maria-trinidad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3660ed0298e990eae9eef1d9cdb456918aa0b57")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP3-programacion-gonzalez-maria-trinidad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP3-programacion-gonzalez-maria-trinidad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

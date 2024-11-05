@@ -12,3 +12,4 @@ C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-progr
 C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.pdb
 C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.genruntimeconfig.cache
 C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\ref\TP3-programacion-gonzalez-maria-trinidad.dll
+C:\Users\Usuario\source\repos\TP3-programacion-gonzalez-maria-trinidad\TP3-programacion-gonzalez-maria-trinidad\obj\Debug\net8.0\TP3-programacion-gonzalez-maria-trinidad.sourcelink.json

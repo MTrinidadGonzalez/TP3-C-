@@ -1,172 +1,175 @@
 ﻿using System;
 
-class Program 
+class Program
 {
-    static void Main() 
+    static void Main()
     {
+        int[,] vuelos = new int[5, 60]; 
+        int userOption;
 
-
-        Console.WriteLine("Presione:" +
-            "\n- 1 Para crear un vuelo." +
-            "\n- 2 para reservar un vuelo." +
-            "\n- 3 Para cancelar un vuelo." +
-            "\n- 4 Para ver asientos disponibles y ocupados." +
-            "\n- 5 Para ver cantidad de asientos disponibles y ocupados." +
-            "\n- 6 Para ver disponibilidad de un asiento en particular." +
-            "\n- 7 Para cancelar la operación.");
-
-        int user_option = int.Parse(Console.ReadLine());
-
-        int[] vuelo = new int[60];
-
-        switch (user_option)
+        do
         {
-            case 1:
-                CreateAirplaneFlight();
-                break;
-            case 2:
-                MakeAreservation(vuelo);
-                break;
-            case 3:
-                CancelFlight(vuelo);
-                break;
-            case 4:
-                ShowOccupiedAvailableSeats(vuelo);
-                break;
-            case 5:
-                OccupiedAvailableSeatsCount(vuelo);
-                break;
-            case 6:
-                SearchSeat(vuelo);
-                break;
-            case 7:
-                Console.WriteLine("Cancelar operación.");
-                break;
-            default:
-                Console.WriteLine("Opción no válida.");
-                break;
-        }
+            Console.WriteLine("\nSeleccione una opción:" +
+                "\n1. Crear un vuelo" +
+                "\n2. Reservar un asiento" +
+                "\n3. Cancelar un vuelo" +
+                "\n4. Ver asientos disponibles y ocupados" +
+                "\n5. Contar asientos disponibles y ocupados" +
+                "\n6. Ver disponibilidad de un asiento específico" +
+                "\n7. Salir");
 
-        //cierre del main function
+            userOption = int.Parse(Console.ReadLine());
+
+            switch (userOption)
+            {
+                case 1:
+                    CreateAirplaneFlight();
+                    break;
+                case 2:
+                    MakeAReservation(vuelos);
+                    break;
+                case 3:
+                    CancelFlight(vuelos);
+                    break;
+                case 4:
+                    ShowOccupiedAvailableSeats(vuelos);
+                    break;
+                case 5:
+                    OccupiedAvailableSeatsCount(vuelos);
+                    break;
+                case 6:
+                    SearchSeat(vuelos);
+                    break;
+                case 7:
+                    Console.WriteLine("Operación cancelada.");
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida.");
+                    break;
+            }
+        } while (userOption != 7);
     }
 
     static void CreateAirplaneFlight()
     {
-        Console.WriteLine("Vuelo creado");
-        // cierre de create airplane flight
+        Console.WriteLine("Nuevo vuelo creado exitosamente.");
     }
 
-    static void MakeAreservation(int[] vuelo)
+    static int[,] MakeAReservation(int[,] vuelos)
     {
+        Console.WriteLine("Ingrese el número de vuelo (0-4): ");
+        int flightNumber = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(" Ingrese el número del asiento (0 a 59):");
-        int numeroVuelo = int.Parse(Console.ReadLine());
+        Console.WriteLine("Ingrese el número de asiento (0 a 59):");
+        int seatNumber = int.Parse(Console.ReadLine());
 
-    //Console.WriteLine("El valor de ese vuelo" + vuelo[numeroVuelo]);
-
-        if (numeroVuelo >= 0 && numeroVuelo < vuelo.Length)
+        if (flightNumber >= 0 && flightNumber < vuelos.GetLength(0) && seatNumber >= 0 && seatNumber < vuelos.GetLength(1))
         {
-            if (vuelo[numeroVuelo] == 0) 
+            if (vuelos[flightNumber, seatNumber] == 0)
             {
-                vuelo[numeroVuelo] = 1;
-                Console.WriteLine("El vuelo en la posición " + numeroVuelo + " ha sido reservado exitosamente!");
-           //   Console.WriteLine("El valor de ese vuelo" + vuelo[numeroVuelo]);
+                vuelos[flightNumber, seatNumber] = 1;
+                Console.WriteLine("El asiento " + seatNumber + " en el vuelo " + flightNumber + " ha sido reservado.");
             }
-            else if (vuelo[numeroVuelo] == 1)
+            else
             {
-                Console.WriteLine("El asiento en la posición " + numeroVuelo + " ya está ocupado,"
-                + " los espacios disponibles son en las butacas: ");
-                for(int i = 0; i < vuelo.Length; i++)
+                Console.WriteLine("Asiento ocupado. Asientos disponibles:");
+                for (int i = 0; i < vuelos.GetLength(1); i++)
                 {
-                   if (vuelo[i] == 0)
+                    if (vuelos[flightNumber, i] == 0)
                     {
-                        Console.WriteLine("Butaca " + vuelo[i] + "disponible");
-
+                        Console.WriteLine("Asiento " + i + " disponible.");
                     }
-                }
-                Console.WriteLine(" En base a la información dada, ingrese un núevo número de reserva");
-                int numeroNuevo = int.Parse(Console.ReadLine());
-                if (vuelo[numeroVuelo] == 0)
-                {
-                    vuelo[numeroVuelo] = 1;
-                    Console.WriteLine("El vuelo en la posición " + numeroVuelo + " ha sido reservado exitosamente");
-                    //   Console.WriteLine("El valor de ese vuelo" + vuelo[numeroVuelo]);
                 }
             }
         }
         else
         {
-            Console.WriteLine("Número de asiento no válido. Ingrese un número entre 0 y 59.");
+            Console.WriteLine("Número de asiento o vuelo inválido.");
         }
-
-
-        // cierre de MakeAreservation
+        return vuelos;
     }
 
-    static void CancelFlight(int[] vuelo)
+    static int[,] CancelFlight(int[,] vuelos)
     {
-        Console.WriteLine("Ingrese el número de butaca que desea cancelar");
-        int butacaAcancelar = int.Parse(Console.ReadLine());
-        vuelo[butacaAcancelar] = 0;
-        Console.WriteLine("Cancelo su vuelo exitosamente.");
-        // cierre de  CancelFlight
-    }
+        Console.WriteLine("Ingrese el número de vuelo (0-4): ");
+        int flightNumber = int.Parse(Console.ReadLine());
 
-    static void ShowOccupiedAvailableSeats(int[] vuelo)
-    {
-        for (int i = 0; i <vuelo.Length ; i++)
+        Console.WriteLine("Ingrese el número de asiento que desea cancelar (0-59): ");
+        int seatNumber = int.Parse(Console.ReadLine());
+
+        if (flightNumber >= 0 && flightNumber < vuelos.GetLength(0) && seatNumber >= 0 && seatNumber < vuelos.GetLength(1))
         {
-            if (vuelo[i] == 0 )
+            vuelos[flightNumber, seatNumber] = 0;
+            Console.WriteLine("Asiento cancelado exitosamente.");
+        }
+        else
+        {
+            Console.WriteLine("Número de asiento o vuelo inválido.");
+        }
+        return vuelos;
+    }
+
+    static void ShowOccupiedAvailableSeats(int[,] vuelos)
+    {
+        Console.WriteLine("Ingrese el número de vuelo (0-4) para ver su estado de asientos:");
+        int flightNumber = int.Parse(Console.ReadLine());
+
+        if (flightNumber >= 0 && flightNumber < vuelos.GetLength(0))
+        {
+            for (int i = 0; i < vuelos.GetLength(1); i++)
             {
-                Console.WriteLine("Asiento: " + i+ " disponible.");
+                string status = vuelos[flightNumber, i] == 0 ? "disponible" : "ocupado";
+                Console.WriteLine("Asiento " + i + ": " + status);
             }
-            else if (vuelo[i] == 1 )
+        }
+        else
+        {
+            Console.WriteLine("Número de vuelo inválido.");
+        }
+    }
+
+    static void OccupiedAvailableSeatsCount(int[,] vuelos)
+    {
+        Console.WriteLine("Ingrese el número de vuelo (0-4): ");
+        int flightNumber = int.Parse(Console.ReadLine());
+
+        if (flightNumber >= 0 && flightNumber < vuelos.GetLength(0))
+        {
+            int asientosDisponibles = 0;
+            int asientosOcupados = 0;
+
+            for (int i = 0; i < vuelos.GetLength(1); i++)
             {
-                Console.WriteLine("Asiento: " + i+ " ocupado.");
+                if (vuelos[flightNumber, i] == 0)
+                    asientosDisponibles++;
+                else
+                    asientosOcupados++;
             }
-        }
 
-        // cierre de ShowOccupiedAvailableSeats
+            Console.WriteLine("Vuelo " + flightNumber + " - Asientos disponibles: " + asientosDisponibles + ", Asientos ocupados: " + asientosOcupados);
+        }
+        else
+        {
+            Console.WriteLine("Número de vuelo inválido.");
+        }
     }
 
-    static void OccupiedAvailableSeatsCount(int[] vuelo)
+    static void SearchSeat(int[,] vuelos)
     {
-        int asientosDisponibles = 0;
-        int asientosOcupados = 0;
+        Console.WriteLine("Ingrese el número de vuelo (0-4): ");
+        int flightNumber = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i <vuelo.Length ;i++) 
+        Console.WriteLine("Ingrese el número de asiento para verificar su disponibilidad (0-59): ");
+        int seatNumber = int.Parse(Console.ReadLine());
+
+        if (flightNumber >= 0 && flightNumber < vuelos.GetLength(0) && seatNumber >= 0 && seatNumber < vuelos.GetLength(1))
         {
-             if (vuelo[i] == 0)
-                 {
-                     asientosDisponibles++;
-                 }
-             else if (vuelo[i] == 1) 
-                 {
-                     asientosOcupados++;
-                 }
+            string status = vuelos[flightNumber, seatNumber] == 0 ? "disponible" : "ocupado";
+            Console.WriteLine("Asiento " + seatNumber + " en vuelo " + flightNumber + " está " + status + ".");
         }
-        Console.WriteLine("Asientos disponibles: " + asientosDisponibles);
-        Console.WriteLine("Cantidad de asientos ocupados: " + asientosOcupados);
-        // cierre de  OccupiedAvailableSeatsCount
+        else
+        {
+            Console.WriteLine("Número de asiento o vuelo inválido.");
+        }
     }
-
-    static void SearchSeat(int[] vuelo)
-    {
-        Console.WriteLine("Ingrese el número de butaca que desea conocer su disponibilidad.");
-        int searchUserSeat = int.Parse(Console.ReadLine());
-
-        if (vuelo[searchUserSeat] == 0)
-        {
-
-            Console.WriteLine("Butaca disponible.");
-        }
-        else if (vuelo[searchUserSeat] == 1)
-        {
-
-            Console.WriteLine("Butaca ocupada.");
-        }
-        //cierre del SearchSeat
-    }
-
-    //cierre de la clase program
 }

@@ -4,17 +4,16 @@ Esta aplicación en C# simula un sistema simple de reservación de vuelos. Los u
 Funcionalidades
 El sistema permite a los usuarios realizar las siguientes acciones:
 
--Crear un vuelo: Inicializa un nuevo vuelo (aunque esta funcionalidad es mínima en este caso).
--Reservar un asiento: Los usuarios pueden reservar un asiento específico ingresando su número.
--Cancelar una reservación: Cancela una reservación especificando el número de asiento.
--Ver asientos disponibles y ocupados: Muestra el estado de cada asiento (disponible u ocupado).
--Contar asientos disponibles y ocupados: Muestra el total de asientos disponibles y ocupados.
--Consultar disponibilidad de un asiento: Verifica si un asiento específico está disponible o ocupado.
--Cancelar la operación: Salir de la aplicación o cancelar cualquier operación en curso.
+Crear un vuelo: Inicializa un nuevo vuelo (aunque esta funcionalidad es mínima en este caso).
+Reservar un asiento: Los usuarios pueden reservar un asiento específico ingresando su número.
+Cancelar una reservación: Cancela una reservación especificando el número de asiento.
+Ver asientos disponibles y ocupados: Muestra el estado de cada asiento (disponible u ocupado).
+Contar asientos disponibles y ocupados: Muestra el total de asientos disponibles y ocupados.
+Consultar disponibilidad de un asiento: Verifica si un asiento específico está disponible o ocupado.
+Cancelar la operación: Salir de la aplicación o cancelar cualquier operación en curso.
+Instrucciones de Uso
+Al ejecutar el programa, el usuario debe seleccionar una opción ingresando un número del 1 al 7. Dependiendo de la opción elegida, el programa realizará las siguientes acciones:
 
-
-Al ejecutar el programa, el usuario debe seleccionar una opción ingresando un número del 1 al 7.
-Dependiendo de la opción elegida, el programa realizará las siguientes acciones:
 Opción 1: Crea un vuelo (muestra un mensaje de confirmación).
 Opción 2: Reserva un asiento solicitando al usuario que ingrese un número de asiento (entre 0 y 59).
 Opción 3: Cancela una reservación solicitando al usuario que ingrese el número de asiento.
@@ -22,14 +21,15 @@ Opción 4: Muestra el estado de todos los asientos (disponibles u ocupados).
 Opción 5: Muestra el total de asientos disponibles y ocupados.
 Opción 6: Permite al usuario verificar la disponibilidad de un asiento específico.
 Opción 7: Cancela la operación actual y sale del programa.
-
-
- Código: 
+Código
+Descripción de Variables y Métodos
 int[] vuelo: Un arreglo que representa los asientos del vuelo, donde cada índice corresponde a un asiento. 0 significa disponible, 1 significa reservado.
-Método Principal (Main): Muestra el menú y toma la entrada del usuario para seleccionar una acción.
-Métodos:
+Método Principal (Main)
+Muestra el menú y toma la entrada del usuario para seleccionar una acción.
+
+Métodos Implementados
 CreateAirplaneFlight(): Método placeholder que imprime un mensaje de confirmación cuando se crea un vuelo.
-MakeAreservation(int[] vuelo): Gestiona la reservación de asientos verificando si un asiento está disponible o ya reservado.
+MakeAReservation(int[] vuelo): Gestiona la reservación de asientos verificando si un asiento está disponible o ya reservado.
 CancelFlight(int[] vuelo): Cancela una reservación configurando un asiento como disponible (0).
 ShowOccupiedAvailableSeats(int[] vuelo): Recorre los asientos y muestra si están disponibles u ocupados.
 OccupiedAvailableSeatsCount(int[] vuelo): Cuenta y muestra el total de asientos disponibles y ocupados.
